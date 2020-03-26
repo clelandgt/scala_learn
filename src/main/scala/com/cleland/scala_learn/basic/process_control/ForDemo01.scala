@@ -1,6 +1,6 @@
 package com.cleland.scala_learn.basic.process_control
 
-object ForDemo1 {
+object ForDemo01 {
   def main(args: Array[String]): Unit = {
 
     // for 循环

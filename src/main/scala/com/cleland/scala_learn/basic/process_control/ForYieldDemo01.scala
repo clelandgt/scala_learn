@@ -1,6 +1,6 @@
 package com.cleland.scala_learn.basic.process_control
 
-object ForYield {
+object ForYieldDemo01 {
   def main(args: Array[String]): Unit = {
     // 打印 1 ~ 100之间的偶数
     val start = 1
