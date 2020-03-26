@@ -14,7 +14,7 @@ import io.StdIn
   其他: 20
  */
 
-object if_sample {
+object IfDemo01 {
   def main(args: Array[String]): Unit = {
 
     println("输入月份:")
