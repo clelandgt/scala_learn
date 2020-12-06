@@ -1,4 +1,4 @@
-package main.scala.com.cleland.scala_learn.project.csv_demo
+package com.cleland.scala_learn.project.csv_demo
 
 trait DefaultCSVFormat extends CSVFormat {
 

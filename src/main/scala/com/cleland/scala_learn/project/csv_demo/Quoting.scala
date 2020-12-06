@@ -1,4 +1,4 @@
-package main.scala.com.cleland.scala_learn.project.csv_demo
+package com.cleland.scala_learn.project.csv_demo
 
 sealed abstract trait Quoting extends Product with Serializable
 case object QUOTE_ALL extends Quoting
