@@ -5,16 +5,17 @@ package com.cleland.scala_learn.basic.functional_programming
 object Fibonacci {
 
   def main(args: Array[String]): Unit = {
-    println(fibonacci(6))
+    val start = 0
+    val end = 10
 
+    for(i <- start to end){
+      print(s"${fibonacci(i)} ")
+    }
   }
 
   def fibonacci(n: Int): Int = {
-    if(n == 0){
-      return 1
-    }
-    if(n == 1){
-      return 1
+    if(n <= 1){
+      return n
     }
 
     return fibonacci(n-1) + fibonacci(n-2)
