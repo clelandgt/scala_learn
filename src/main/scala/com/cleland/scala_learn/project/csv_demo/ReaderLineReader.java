@@ -1,34 +1,34 @@
 package com.cleland.scala_learn.project.csv_demo;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader
+import java.io.Reader;
 
+public class ReaderLineReader implements LineReader {
 
-public class ReaderLineReader implements LineReader{
     private BufferedReader bufferedReader;
     private Reader baseReader;
 
-    public ReaderLineReader(Reader reader){
+    public ReaderLineReader(Reader reader) {
         this.baseReader = reader;
         this.bufferedReader = new BufferedReader(reader);
     }
 
-    public String readLineWithTerminator() throws IOException{
-        StringBuffer sb = new StringBuilder();
+    public String readLineWithTerminator() throws IOException {
+        StringBuilder sb = new StringBuilder();
         do {
+
             int c = bufferedReader.read();
 
-            if (c == -1){
-                if (sb.length() == 0){
+            if (c == -1) {
+                if (sb.length() == 0) {
                     return null;
                 } else {
                     break;
                 }
             }
 
-            sb.append((char), c);
+            sb.append((char) c);
 
             if (c == '\n'
                     || c == '\u2028'
@@ -37,22 +37,26 @@ public class ReaderLineReader implements LineReader{
                 break;
             }
 
-            if (c == '\r'){
+            if (c == '\r') {
+
                 bufferedReader.mark(1);
+
                 c = bufferedReader.read();
 
-                if (c == -1){
+                if (c == -1) {
                     break;
-                } else if (c == '\n'){
-                    sb.append('\n')
+                } else if (c == '\n') {
+                    sb.append('\n');
                 } else {
                     bufferedReader.reset();
                 }
+
                 break;
             }
 
         } while (true);
-        return sb.toString()
+
+        return sb.toString();
     }
 
     public void close() throws IOException {
